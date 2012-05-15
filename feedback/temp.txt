@@ -1,0 +1,2 @@
+<div align="center" style="font-size:25px; padding-top:10px;">朝</div>
+<img src="../img/fb0.png">

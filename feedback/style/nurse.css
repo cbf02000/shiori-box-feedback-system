@@ -1,0 +1,23 @@
+dl {
+ width: 600px;
+ border-style: solid;
+ border-color: rgb(100,100,100);
+ border-width: 2px;
+}
+dt {
+ margin-bottom: 0.2ex;
+ width: 8em;
+ background-color: rgb(100,100,100);
+ color: rgb(255,255,255);
+}
+td {
+ width: 80px;
+}
+img {
+ width: 1.2em;
+ height: 1.2em;
+}
+#submit {
+ margin: 0px auto;
+ width: 5em;
+}

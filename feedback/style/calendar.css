@@ -1,0 +1,139 @@
+
+.calTable {
+	background-color: #ffffff;
+	border-collapse: collapse;
+}
+
+.calTable td,
+.calTable th {
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	font-family: Verdana, Helvetica;
+	font-size: 10px;
+	color: #666666;
+	border: 1px solid #dddddd;
+	margin: 0px;
+	padding: 0px;
+}
+
+.calTable th {
+	height: 20px;
+	background-color: #eeeeee;
+	text-align: center;
+	font-weight: normal;
+	border: 1px solid #dddddd;
+}
+
+.calTable td.mon {
+	width: 100px;
+	font-weight: bold;
+	border: 1px solid #dddddd;
+}
+
+.calTable td.btn {
+	font-weight: bold;
+	border: 1px solid #dddddd;
+}
+
+.calTable td.sat {
+	background-color: #f0f6ff;
+	color: #4b86de;
+}
+
+.calTable td.sun {
+	background-color: #fff0f0;
+	color: #d63838;
+}
+
+.calTable td.today {
+	background-color: #ffffbb;
+	font-weight: bold;
+	color: #ff6600;
+}
+
+.calTable td.webJozu {
+	width: 76px;
+	text-align: right;
+	padding-right:5px;
+}
+
+.calTable td.close {
+	width: 57px;
+	text-align: left;
+	border-right: 1px solid #ffffff;
+	padding-left:5px;
+}
+
+.calTable td.btn a {
+	display: block;
+	background-color: #f9f9f9;
+	width: 20px;
+	height: 20px;
+	color: #3366cc;
+	padding: 0px 0px 0px 0px;
+	text-decoration: none;
+}
+
+.calTable td.btn a:hover {
+	background-color: #BEDCFA;
+	text-decoration: underline;
+}
+
+.yView {
+	font-size: 10px;
+	font-weight: normal;
+	color: #999999;
+}
+
+.tbView {display:none;}
+
+.linkArea {
+	display: block;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+}
+
+a.linkArea:link,
+a.linkArea:visited {
+	color: #777777;
+	text-decoration: none;
+}
+
+.calTable td.sat a.linkArea:link,
+.calTable td.sat a.linkArea:visited {
+	color: #4b86de;
+}
+
+.calTable td.sun a.linkArea:link,
+.calTable td.sun a.linkArea:visited {
+	color: #d63838;
+}
+
+a.linkArea:hover {
+	background-color: #ffcc66;
+}
+
+.calenPopup {
+	display: block;
+	position: absolute;
+	background-color: #64A0E4;
+	left: 0px;
+	top: 20px;
+	text-align: left;
+	visibility: visible;
+	padding: 5px 4px 4px 5px;
+	*padding: 4px;
+}
+
+.calenPopupImg {
+	display: block;
+	position: absolute;
+	background-color: #64A0E4;
+	left: 18px;
+	top: 1px;
+	visibility: visible;
+	padding: 5px 4px 4px 5px;
+	*padding: 4px;
+}

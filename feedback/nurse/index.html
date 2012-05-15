@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>フィードバック入力画面</title>
+<link rel="stylesheet" type="text/css" href="../style/calendar.css">
+<link rel="stylesheet" type="text/css" href="../style/nurse.css">
+</head>
+<body>
+<h2>フィードバック入力画面</h2>
+<form name="form" enctype="multipart/form-data" method="post" action="upload.rb">
+<dl>
+
+  <dt>宛先</dt>
+  <dd></dd>
+  <dd>
+    <SELECT name="sendto">
+      <OPTION value="0">Shiori Box 0</OPTION>
+      <OPTION value="1">Shiori Box 1</OPTION>
+      <OPTION value="2">Shiori Box 2</OPTION>
+    </SELECT>
+  </dd>
+
+  <dt>日付</dt>
+
+  <dd></dd>
+	<dd>
+
+<select name="yy">
+<script language="JavaScript" type="text/javascript">
+<!--
+nowDate = new Date();
+theYear = nowDate.getFullYear();
+theMonth = nowDate.getMonth();
+theDate = nowDate.getDate();
+
+for(i=theYear-2; i<=theYear+2; i++){
+	if(i == theYear){
+		document.write('<option value="' + i + '" selected>' + i + '</option>');
+	}else{
+		document.write('<option value="' + i + '">' + i + '</option>');
+	}
+}
+//-->
+</script>
+</select>年&nbsp;
+
+<select name="mm">
+<script language="JavaScript" type="text/javascript">
+<!--
+for(i=1; i<=12; i++){
+	if(i == theMonth+1){
+		document.write('<option value="' + i + '" selected>' + i + '</option>');
+	}else{
+		document.write('<option value="' + i + '">' + i + '</option>');
+	}
+}
+//-->
+</script>
+</select>月&nbsp;
+
+<select name="dd">
+<script language="JavaScript" type="text/javascript">
+<!--
+for(i=1; i<=31; i++){
+	if(i == theDate){
+		document.write('<option value="' + i + '" selected>' + i + '</option>');
+	}else{
+		document.write('<option value="' + i + '">' + i + '</option>');
+	}
+}
+//-->
+</script>
+
+</select>日&nbsp;
+<span style="position:relative;">
+<a href="javascript:viewCalen(theMonth); void(0);"><img src="../img/ico_calen.gif" width="16" height="12" border="0" align="absmiddle" alt="カレンダーから選択" style="padding-top:5px;"></a>
+<span id="calenArea"></span>
+</span>
+
+<script type="text/javascript" src="../js/calendar.js" charset="utf-8"></script>
+
+	</dd>
+	<dt>服薬状況</dt>
+
+	<dd>
+		<table style="text-align:center;">
+		<tr>
+			<td> </td>
+			<td><img src="../img/0.png"><br />飲んだ</td>
+			<td><img src="../img/1.png"><br />飲み忘れ</td>
+			<td><img src="../img/2.png"><br />不明</td>
+			<td><img src="../img/3.png"><br />関係無し</td>
+			
+
+		</tr>
+		<tr>
+			<td>朝</td>
+			<td><input type="radio" name="asa" value="0"></td>	
+			<td><input type="radio" name="asa" value="1"></td>
+			<td><input type="radio" name="asa" value="2"></td>
+			<td><input type="radio" name="asa" value="3" checked></td>
+		</tr>
+		<tr>
+			<td>昼</td>
+			<td><input type="radio" name="hiru" value="0"></td>	
+			<td><input type="radio" name="hiru" value="1"></td>
+			<td><input type="radio" name="hiru" value="2"></td>
+			<td><input type="radio" name="hiru" value="3" checked></td>
+		</tr>
+		<tr>
+			<td>夜</td>
+			<td><input type="radio" name="yoru" value="0"></td>	
+			<td><input type="radio" name="yoru" value="1"></td>
+			<td><input type="radio" name="yoru" value="2"></td>
+			<td><input type="radio" name="yoru" value="3" checked></td>
+		</tr>
+		<tr>
+			<td>寝る前</td>
+			<td><input type="radio" name="neru" value="0"></td>	
+			<td><input type="radio" name="neru" value="1"></td>
+			<td><input type="radio" name="neru" value="2"></td>
+			<td><input type="radio" name="neru" value="3" checked></td>
+		</tr>
+
+		</table>
+
+		</table>
+	</dd>
+	<dt>本文</dt>
+	<dd><textarea name="body" rows="13" cols="50"></textarea></dd>
+	<dt>upload画像(jpg)</dt>
+	<dd><input type="file" size="32" name="image" value="" /></dd>
+</dl>
+<input type="hidden" name="action" value="image" />
+
+<input type="submit" value="送信" />
+</form>
+</body>
+</html>
+
