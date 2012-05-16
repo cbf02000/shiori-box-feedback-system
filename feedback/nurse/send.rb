@@ -13,8 +13,10 @@ id = cgi["id"].to_i
 db = SQLite3::Database.new("../../db/feedback.db")
 
 db.execute("update patients set new='1' where id=?", sendto)
+db.execute("update patients set message_id=? where id=?", id, sendto)
+db.execute("update messages set sent='1' where id=?", id)
 
-res = `cp ../img/resized.jpg ../img/#{id}.jpg`
+db.close
 
 print <<EOS
 Content-type: text/html

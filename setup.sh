@@ -9,6 +9,7 @@ chmod -R 777 ./db
 chmod -R 777 ./feedback/upload
 
 RESET_PATIENTS="UPDATE patients SET new=0;"
+RESET_PATIENTS="UPDATE patients SET message_id=NULL;"
 RESET_MESSAGES="DELETE FROM messages;"
 COMMAND="sqlite3 ./db/feedback.db"
 

@@ -8,11 +8,12 @@ for(var i = 0; i < hashes.length; i++) {
 
 var uid = vars.uid;
 var currentStatus = 2;
-
 // currentStatus;
 // 0 -> show most recent message
 // 1 -> new message received
 // 2 -> page loaded for the first time
+
+var msgId;
 
 console.log(uid);
 getMessageStatus();
@@ -24,6 +25,10 @@ function getMessageStatus() {
 	var newMessageURL = "new-message.html";
 
 	$.getJSON(statusURL, function(data) {
+		
+		msgId = data.msg;
+		console.log(msgId);
+
 		if (data.code == "0") {
 			if (currentStatus != 0) {
         		$("#container").load(contentURL);
@@ -44,7 +49,7 @@ function getMessageStatus() {
 
 function readNewMessage() {
 
-	var readMessageURL = "read-new-message.rb?uid=" + uid;
+	var readMessageURL = "read-new-message.rb?uid=" + uid + "&msg=" + msgId;
 
 	$.getJSON(readMessageURL, function(data) {
 		if (data.code == "0") {

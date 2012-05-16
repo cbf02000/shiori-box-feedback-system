@@ -62,7 +62,7 @@ end
 
 db = SQLite3::Database.new("../../db/feedback.db")
 
-db.execute("insert into messages values (?, ?, ?, ?, ?, ?, ?, ?)", id, date, sendto, asa, hiru, yoru, neru, text)
+db.execute("insert into messages values (?, ?, ?, ?, ?, ?, ?, ?, 0, 0)", id, date, sendto, asa, hiru, yoru, neru, text)
 
 db.close
 

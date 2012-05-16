@@ -18,7 +18,11 @@ require 'active_support'
 require 'RMagick'
 require 'json'
 require 'find'
-
+require 'tmail'
+require 'net/smtp'
+require 'kconv'
+require 'base64'
+require 'tlsmail'
 
 -- 準備手順 --
 
