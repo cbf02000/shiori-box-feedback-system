@@ -16,14 +16,9 @@ if cgi["uid"] != "" then
 
 	db = SQLite3::Database.new("../../db/feedback.db")
 
-	data = db.get_first_row("select * from patients where id=?", uid)
+	data = db.get_first_row("update patients set new=0 where id=?", uid)
 
-
-	if data[1] == 0 then
-		res = {"code" => "0"}
-	elsif data[1] == 1 then
-		res = {"code" => "1"}
-	end
+	res = {"code" => "0"}
 else
 	res = {"code" => "-1"}
 end

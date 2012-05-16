@@ -46,7 +46,7 @@ function readNewMessage() {
 
 	var readMessageURL = "read-new-message.rb?uid=" + uid;
 
-	$.getJSON(statusURL, function(data) {
+	$.getJSON(readMessageURL, function(data) {
 		if (data.code == "0") {
 			getMessageStatus();
 		}

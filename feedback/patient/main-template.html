@@ -5,29 +5,45 @@
 <div class="header">
 
 <h1 class="title">看護師からのメッセージ</h1>
-<a class="right" href="index.html">更新</a>
+
+<script type="text/javascript">
+$("#reload").click(function(){
+        reloadPage();
+});
+</script>
+
+<a class="right" href="#" id="reload">更新</a>
 
 </div><!--header-->
 
 <div class="content">
 
 <div align="center">
-<img src="../img/0.png">
+
+<script>
+$(function () {
+	$(".rslides").responsiveSlides({
+		maxwidth: "500px"
+	});
+});
+</script>
+
+<ul class="rslides">
+%%images%%
+</ul>
+
 </div>
+
 <br />
 <div class="box-white" style="font-size:40px;">
 <p>
-あいうえおadfa！ajaxtest
 %%message%%
 </p>
+
 </div><!--box-white-->
 
 </div><!--content-->
 </div><!--main-->
-
-
-
-
 
 <div id="sidebar">
 

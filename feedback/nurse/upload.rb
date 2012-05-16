@@ -4,7 +4,7 @@ require 'cgi'
 require 'rubygems'
 require 'sqlite3'
 require 'RMagick'
-require 'active_support'
+require 'active_support/all'
 
 def getText(id)
 	if id == 0 then
@@ -39,10 +39,12 @@ newimage = 0
 date = "%04d" % year + "%02d" % mon + "%02d" % day
 
 if image.blank? == false then
+
 	open("../upload/temp.jpg","w") do |fh|
-	fh.binmode
-	fh.write image
+		fh.binmode
+		fh.write image
 	end
+
 	newimage = 1
 
 	maxHeight = 350
@@ -61,6 +63,7 @@ end
 db = SQLite3::Database.new("../../db/feedback.db")
 
 db.execute("insert into messages values (?, ?, ?, ?, ?, ?, ?, ?)", id, date, sendto, asa, hiru, yoru, neru, text)
+
 db.close
 
 print <<EOS
@@ -81,16 +84,16 @@ Content-type: text/html
 
   <table style="text-align:center;" border="1">
    <tr>
-    <td width="80px">朝</td>
-    <td width="80px">昼</td>
-    <td width="80px">夜</td>
-    <td width="80px">寝る前</td>
+    <td width="120px">朝</td>
+    <td width="120px">昼</td>
+    <td width="120px">夜</td>
+    <td width="120px">寝る前</td>
    </tr>
    <tr>
-    <td width="80px">#{getText(asa)}<br /></td>
-    <td width="80px">#{getText(hiru)}<br /></td>
-    <td width="80px">#{getText(yoru)}<br /></td>
-    <td width="80px">#{getText(neru)}<br /></td>
+    <td width="120px">#{getText(asa)}<br /></td>
+    <td width="120px">#{getText(hiru)}<br /></td>
+    <td width="120px">#{getText(yoru)}<br /></td>
+    <td width="120px">#{getText(neru)}<br /></td>
    </tr>
   </table>
 EOS
@@ -107,10 +110,10 @@ else
 	print "<h3>アップロード画像無し</h3>"
 end
 
-print <<EOS
+print <<EOS2
 <h3><a href="#" onClick="history.back(); return false;">前のページにもどる</a> / 
 <a href="send.rb?sendto=#{sendto}&id=#{id}">送信</a></h3>
 </center>
 </body>
 </html>
-EOS
+EOS2
